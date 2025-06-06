@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 body {
-    display: grid;
     font-family: "Poppins", sans-serif;
 
 }
@@ -26,11 +25,13 @@ body {
 
     .everything{
         grid-area: everything;
+        height: 100%;
     }
 
     .footer{
         grid-area: footer;
         width: 30%;
+        height: 100%;
     }
 
 
@@ -67,7 +68,8 @@ a{
     grid-template-columns: repeat(12, 1fr);
     gap: 24px;
     width: 100%;
-    max-height: 854px;
+    overflow: auto;
+
     grid-template-rows: 2fr 1fr;
 
     .content{
@@ -87,19 +89,45 @@ a{
         grid-column: 7/13;
     }
 
+    @media (max-width: 480px){
+
+
+    .content{
+        display: flex;
+        justify-content: space-between;
+        grid-row: 1 ;
+        grid-column: 1/13;
+        max-width: 400px;
+    }
+    .photo{
+        grid-row: 2;
+        grid-column: 1/8;
+        max-height: 300px;
+    }
+    .about{
+        grid-row: 3;
+        grid-column: 1/13;
+        
+    }
+    .contact{
+        grid-row: 4;
+        grid-column: 1/13;
+    }
+    }
 }
 
 .content{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 24px;
     padding: 24px;
     background: #FADCD9;
     border-radius: 20px;
 
 }
-.content img{
 
+.content img{
     align-self: flex-end;
     width: 119px;
     height: 119px;
@@ -107,7 +135,7 @@ a{
 .content h2{
     display: flex;
     flex-direction: column;
-    font-size: 50px;
+    font-size: 40px;
 }
 .photo img{
     width: 100%;
@@ -132,8 +160,8 @@ a{
 .footer{
     display: grid;
     flex-direction: column;
-    gap: 50px;
-    width: 30%;
+    gap: 70px;
+    width: 100%;
 }
 .projects{
     display: flex;
@@ -170,3 +198,4 @@ a{
     background: #FADCD9;
     border-radius: 20px;
 }
+
